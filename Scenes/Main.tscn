@@ -1,0 +1,132 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scenes/paddle.gd" type="Script" id=2]
+[ext_resource path="res://Assests/bg.png" type="Texture" id=4]
+[ext_resource path="res://Assests/mediationboi.png" type="Texture" id=5]
+[ext_resource path="res://Assests/paddle.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/GameController.gd" type="Script" id=7]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 720, 405 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 720, 0, 720, 405 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 1440, 0, 720, 405 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 2160, 0, 720, 405 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 2880, 0, 720, 405 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( -86.1659, 185.753, 86.1659, -185.753, 65.7154, 571.203, -163.347, 50.6271, 163.347, -50.6271, 392.026, 310.436, -154.451, -51.1158, 154.451, 51.1158, 881.493, 310.436, -128.578, -187.899, 128.578, 187.899, 1248.59, 571.203 )
+}
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 8.0
+height = 75.1981
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 200, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 400, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 600, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 800, 0, 200, 200 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=15]
+radius = 92.0
+
+[node name="World" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="BG" type="AnimatedSprite" parent="."]
+frames = SubResource( 8 )
+frame = 1
+centered = false
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 102.222, 16 )
+scale = Vector2( 0.392264, 0.644255 )
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 240.882, 365.62 )
+rotation = -0.464803
+offset = 276.31
+
+[node name="paddle" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
+rotation = -0.00222578
+scale = Vector2( 1, 1.01355 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/paddle"]
+position = Vector2( 0, 3.09944e-06 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/paddle"]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="Head" type="StaticBody2D" parent="."]
+
+[node name="Head" type="AnimatedSprite" parent="Head"]
+position = Vector2( 360, 208 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
+position = Vector2( 360, 424 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 15 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
