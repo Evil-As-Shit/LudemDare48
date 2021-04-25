@@ -11,12 +11,13 @@ config_version=4
 [application]
 
 config/name="Deep Meditation"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+Global="*res://Scenes/global.gd"
 
 [display]
 

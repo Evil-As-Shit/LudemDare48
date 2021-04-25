@@ -2,7 +2,7 @@ extends Area2D
 
 var orgin = Vector2(360,408)
 var speed = 400
-onready var world = get_tree().root.get_child(1)
+onready var world = get_tree().root.get_child(2)
 
 func _ready():
 	pass 
@@ -16,6 +16,7 @@ func _on_Thoughts_body_entered(body):
 	if(body.name == "Head"):
 		world.focus -= 3
 	if(body.name == "paddle"):
+		Global.score += 1
 		pass
 	queue_free()
 	print(body.name)

@@ -11,7 +11,9 @@ onready var gametimelabel = get_node("gametime")
 onready var face = get_node("Head/Head")
 onready var bg = get_node("BG")
 
+
 func _ready():
+	Global.score = 0
 	randomize()
 	SilentWolf.configure({
 		  "api_key": "Lxi8p8nrJD84i08qavmCQ4tXEmGwgM4W8WQ9QcAw",
@@ -27,8 +29,13 @@ func _ready():
 
 func _physics_process(delta):
 	focus += 2*delta
-	focuslabel.set_text(str(focus))
+	focuslabel.set_text(str(Global.score))
 	gametimelabel.set_text(str(int(gametime.time_left)))
+	if(int(gametime.time_left) == 0):
+		timer.stop()
+		gametime.stop()
+		get_tree().change_scene("res://Scenes/End.tscn")
+		pass
 #	if(reset == false):
 #		reset == true
 #	elif(reset == true):
@@ -67,12 +74,12 @@ func _physics_process(delta):
 func spawnThought():
 	var screen_size = get_viewport().get_visible_rect().size
 	var new_thought = thought.instance()
-	new_thought.get_node("Sprite").set_frame(rand_range(0,5))
+	new_thought.get_node("Sprite").set_frame(rand_range(0,6))
 	var side = randi()%3+1
 	var pos = Vector2()
 	if(side == 1):
 		pos.x = -64
-		pos.y = rand_range(-64,300)
+		pos.y = rand_range(-64,200)
 		pass
 	if(side == 2):
 		pos.x = rand_range(-64,768)
@@ -80,7 +87,7 @@ func spawnThought():
 		pass
 	if(side == 3):
 		pos.x = 768
-		pos.y = rand_range(-64,300)
+		pos.y = rand_range(-64,200)
 	new_thought.set_position(pos)
 	get_node("Control").add_child(new_thought)
 
