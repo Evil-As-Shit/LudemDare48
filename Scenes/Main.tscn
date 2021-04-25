@@ -36,7 +36,7 @@ animations = [ {
 
 [sub_resource type="Curve2D" id=7]
 _data = {
-"points": PoolVector2Array( -86.1659, 185.753, 86.1659, -185.753, 65.7154, 571.203, -163.347, 50.6271, 163.347, -50.6271, 392.026, 310.436, -154.451, -51.1158, 154.451, 51.1158, 881.493, 310.436, -128.578, -187.899, 128.578, 187.899, 1248.59, 571.203 )
+"points": PoolVector2Array( -140.245, 198.924, 140.245, -198.924, 65.7154, 571.203, -163.347, 50.6271, 163.347, -50.6271, 392.026, 310.436, -154.451, -51.1158, 154.451, 51.1158, 881.493, 310.436, -173.644, -202.167, 173.644, 202.167, 1248.59, 571.203 )
 }
 
 [sub_resource type="CapsuleShape2D" id=8]
@@ -66,7 +66,7 @@ region = Rect2( 800, 0, 200, 200 )
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
-"loop": true,
+"loop": false,
 "name": "default",
 "speed": 5.0
 } ]
@@ -79,7 +79,6 @@ script = ExtResource( 7 )
 
 [node name="BG" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 1
 centered = false
 
 [node name="Control" type="Control" parent="."]
@@ -95,9 +94,10 @@ scale = Vector2( 0.392264, 0.644255 )
 curve = SubResource( 7 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 240.882, 365.62 )
-rotation = -0.464816
-offset = 276.31
+position = Vector2( 656.435, 272.436 )
+rotation = 0.0221046
+offset = 700.11
+loop = false
 
 [node name="paddle" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
 rotation = -0.00222578
@@ -129,5 +129,9 @@ frame = 4
 position = Vector2( 360, 424 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 15 )
+
+[node name="RichTextLabel" type="Label" parent="."]
+margin_right = 136.0
+margin_bottom = 32.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

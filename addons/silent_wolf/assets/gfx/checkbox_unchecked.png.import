@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Deep Meditation.png-69d45cd6b5b11cc34b518f23d4f55636.stex"
+path="res://.import/checkbox_unchecked.png-747244fa66895a7a282a8f1df36959ae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Deep Meditation.png"
-dest_files=[ "res://.import/Deep Meditation.png-69d45cd6b5b11cc34b518f23d4f55636.stex" ]
+source_file="res://addons/silent_wolf/assets/gfx/checkbox_unchecked.png"
+dest_files=[ "res://.import/checkbox_unchecked.png-747244fa66895a7a282a8f1df36959ae.stex" ]
 
 [params]
 
