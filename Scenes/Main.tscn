@@ -6,40 +6,40 @@
 [ext_resource path="res://Assests/paddle.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/GameController.gd" type="Script" id=7]
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 720, 405 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 4 )
 region = Rect2( 720, 0, 720, 405 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 4 )
 region = Rect2( 1440, 0, 720, 405 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 4 )
 region = Rect2( 2160, 0, 720, 405 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 4 )
 region = Rect2( 2880, 0, 720, 405 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=7]
 _data = {
 "points": PoolVector2Array( -86.1659, 185.753, 86.1659, -185.753, 65.7154, 571.203, -163.347, 50.6271, 163.347, -50.6271, 392.026, 310.436, -154.451, -51.1158, 154.451, 51.1158, 881.493, 310.436, -128.578, -187.899, 128.578, 187.899, 1248.59, 571.203 )
 }
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 8.0
 height = 75.1981
 
@@ -78,7 +78,7 @@ radius = 92.0
 script = ExtResource( 7 )
 
 [node name="BG" type="AnimatedSprite" parent="."]
-frames = SubResource( 8 )
+frames = SubResource( 6 )
 frame = 1
 centered = false
 
@@ -92,11 +92,11 @@ __meta__ = {
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 102.222, 16 )
 scale = Vector2( 0.392264, 0.644255 )
-curve = SubResource( 2 )
+curve = SubResource( 7 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 240.882, 365.62 )
-rotation = -0.464803
+rotation = -0.464816
 offset = 276.31
 
 [node name="paddle" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
@@ -111,10 +111,10 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/paddle"]
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 8 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.5
 autostart = true
 
 [node name="Head" type="StaticBody2D" parent="."]
@@ -123,6 +123,7 @@ autostart = true
 position = Vector2( 360, 208 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 14 )
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
 position = Vector2( 360, 424 )
