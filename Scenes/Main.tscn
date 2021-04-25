@@ -113,7 +113,7 @@ texture = ExtResource( 6 )
 rotation = 1.5708
 shape = SubResource( 8 )
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Thought_Timer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
 
@@ -130,8 +130,27 @@ position = Vector2( 360, 424 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 15 )
 
-[node name="RichTextLabel" type="Label" parent="."]
+[node name="focus" type="Label" parent="."]
 margin_right = 136.0
 margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="gametime" type="Label" parent="."]
+margin_left = 336.0
+margin_right = 376.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "60"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game_Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="Thought_Timer" to="." method="_on_Timer_timeout"]
