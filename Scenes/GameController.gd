@@ -53,7 +53,7 @@ func _physics_process(delta):
 		timer.set_wait_time(0.34)
 		bg.set_frame(0)
 		speed = 375
-	if(focus < 50 and focus > 40):
+	if(focus < 41 and focus > 40):
 		timer.set_wait_time(0.37)
 		face.set_frame(4)
 		speed = 350

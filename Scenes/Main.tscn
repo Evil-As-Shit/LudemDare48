@@ -80,9 +80,9 @@ region = Rect2( 800, 0, 200, 200 )
 atlas = ExtResource( 5 )
 region = Rect2( 800, 0, 200, 200 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 5 )
-region = Rect2( 600, 0, 200, 200 )
+region = Rect2( 1000, 0, 200, 200 )
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
@@ -91,7 +91,7 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 14 ), SubResource( 19 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ) ],
 "loop": true,
 "name": "upset",
 "speed": 10.0
@@ -168,6 +168,7 @@ autostart = true
 position = Vector2( 360, 208 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 16 )
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
 position = Vector2( 360, 423 )

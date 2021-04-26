@@ -18,7 +18,7 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventScreenTouch:
-		lab.set_text("using touch screen")
+#		lab.set_text("using touch screen")
 		Global.touch = true
 
 func _on_TextureButton_pressed():
