@@ -11,7 +11,13 @@ func _ready():
 	randomize()
 	playSound()
 	your_score.set_text("You Deflected " + str(Global.score) + " Distracting Thoughts!")
-
+	var t = Timer.new()
+	t.set_wait_time(1)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	get_node("LineEdit").grab_focus()
 func _on_TextureButton2_pressed():
 	get_tree().get_root().set_disable_input(true)
 	Global.player_name = textedit.text
@@ -29,7 +35,6 @@ func js_text_entry():
 	textedit.set_text(current_text)
 
 func _on_LineEdit_focus_entered():
-	print(Global.touch)
 	if(Global.touch == true):
 		js_text_entry()
 		textedit.hide()

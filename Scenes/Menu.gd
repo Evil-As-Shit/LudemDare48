@@ -18,7 +18,7 @@ func _ready():
 		  "open_scene_on_close": "res://Scenes/Main.tscn"
 		})
 
-func _unhandled_input(event):
+func _input(event):
 	if event is InputEventScreenTouch:
 		print("using touch screen")
 		Global.touch = true
