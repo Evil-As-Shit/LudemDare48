@@ -19,7 +19,7 @@ func _ready():
 	var i = 0
 	for name in names:
 		i += 1
-		text = text + str(name) + "\n" 
+		text = text + str(i) +". " + str(name) + "\n"
 		print(text)
 	label_names.set_text(text)
 	text = ""
