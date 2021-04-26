@@ -29,6 +29,7 @@ func js_text_entry():
 	textedit.set_text(current_text)
 
 func _on_LineEdit_focus_entered():
+	print(Global.touch)
 	if(Global.touch == true):
 		js_text_entry()
 		textedit.hide()

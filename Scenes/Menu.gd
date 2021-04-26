@@ -4,7 +4,6 @@ onready var icon = load("res://Assests/mediationicon.png")
 var sound = null
 
 func _ready():
-
 	randomize()
 	playSound()
 	print(Global.submit)
@@ -21,7 +20,7 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventScreenTouch:
-#		lab.set_text("using touch screen")
+		print("using touch screen")
 		Global.touch = true
 
 func _on_TextureButton_pressed():
