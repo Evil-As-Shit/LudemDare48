@@ -58,7 +58,7 @@ func _physics_process(delta):
 func spawnThought():
 	var screen_size = get_viewport().get_visible_rect().size
 	var new_thought = thought.instance()
-	new_thought.get_node("Sprite").set_frame(rand_range(0,6))
+	new_thought.get_node("Sprite").set_frame(rand_range(0,8))
 	var side = randi()%3+1
 	var pos = Vector2()
 	if(side == 1):
