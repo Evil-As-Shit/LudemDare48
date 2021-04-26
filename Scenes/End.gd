@@ -16,8 +16,9 @@ func _ready():
 
 func _on_TextureButton2_pressed():
 	get_tree().get_root().set_disable_input(true)
-	Global.player_name = textedit.text
-	print(Global.player_name)
+	print(OS.get_name())
+	if(OS.get_name() == "Windows"):
+		Global.player_name = textedit.text
 	SilentWolf.Scores.persist_score(Global.player_name, Global.score)
 	var t = Timer.new()
 	t.set_wait_time(0.5)
@@ -34,8 +35,8 @@ func playSound():
 	sound.play()
 
 func js_text_entry():
-	current_text = JavaScript.eval("prompt('%s', '%s');" % ["Please enter text:", current_text], true)
-
+	current_text = JavaScript.eval("prompt('%s', '%s');" % ["Enter Your Name:", current_text], true)
+	textedit.set_text(current_text)
 func _on_LineEdit_focus_entered():
-	js_text_entry()
-	pass # Replace with function body.
+	if(OS.get_name() != "Windows"):
+		js_text_entry()
