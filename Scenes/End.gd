@@ -33,8 +33,15 @@ func playSound():
 func js_text_entry():
 	current_text = JavaScript.eval("prompt('%s', '%s');" % ["Enter Your Name:", current_text], true)
 	textedit.set_text(current_text)
+	if(textedit.text == ""):
+		buttontext.set_text("High Scores")
+		Global.submit = false
+	else:
+		buttontext.set_text("Submit Score")
+		Global.submit = true
 
 func _on_LineEdit_focus_entered():
+	print(Global.touch)
 	if(Global.touch == true):
 		js_text_entry()
 		textedit.hide()
@@ -42,6 +49,7 @@ func _on_LineEdit_focus_entered():
 
 
 func _on_LineEdit_text_changed(new_text):
+	print("line edited")
 	if(textedit.text == ""):
 		buttontext.set_text("High Scores")
 		Global.submit = false

@@ -71,9 +71,9 @@ centered = false
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 margin_left = 200.0
-margin_top = 128.0
+margin_top = 126.0
 margin_right = 520.0
-margin_bottom = 360.0
+margin_bottom = 358.0
 texture = ExtResource( 2 )
 patch_margin_left = 5
 patch_margin_top = 5

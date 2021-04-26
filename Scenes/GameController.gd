@@ -13,7 +13,7 @@ onready var face = get_node("Head/Head")
 onready var bg = get_node("BG")
 onready var nullicon = load("res://Assests/nullicon.png")
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	Input.set_custom_mouse_cursor(nullicon)
 	Global.score = 0
 	randomize()
