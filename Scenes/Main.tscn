@@ -76,31 +76,31 @@ region = Rect2( 600, 0, 200, 200 )
 atlas = ExtResource( 5 )
 region = Rect2( 800, 0, 200, 200 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 5 )
 region = Rect2( 800, 0, 200, 200 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 5 )
 region = Rect2( 600, 0, 200, 200 )
 
-[sub_resource type="SpriteFrames" id=14]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": false,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "upset",
 "speed": 10.0
 } ]
 
-[sub_resource type="CircleShape2D" id=15]
+[sub_resource type="CircleShape2D" id=17]
 radius = 91.0318
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=18]
 size = 46
 font_data = ExtResource( 1 )
 
@@ -125,7 +125,7 @@ curve = SubResource( 7 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 109.642, 236.439 )
-rotation = -0.640451
+rotation = -0.640454
 offset = 157.86
 loop = false
 
@@ -167,12 +167,12 @@ autostart = true
 [node name="Head" type="AnimatedSprite" parent="Head"]
 position = Vector2( 360, 208 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 14 )
+frames = SubResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
 position = Vector2( 360, 423 )
 scale = Vector2( 2, 2 )
-shape = SubResource( 15 )
+shape = SubResource( 17 )
 
 [node name="focus" type="Label" parent="."]
 visible = false
@@ -186,7 +186,7 @@ __meta__ = {
 margin_left = 328.0
 margin_right = 400.0
 margin_bottom = 63.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "60"
 align = 1

@@ -202,5 +202,12 @@ volume_db = -30.793
 stream = ExtResource( 11 )
 volume_db = -30.793
 
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="ButtonBox/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="ButtonBox/TextureButton2" to="." method="_on_TextureButton2_pressed"]

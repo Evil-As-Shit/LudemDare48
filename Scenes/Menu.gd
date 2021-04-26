@@ -1,9 +1,10 @@
 extends Node2D
-
+onready var lab = get_node("Label")
 var sound = null
 func _ready():
 	randomize()
 	playSound()
+	print(Global.submit)
 #	SilentWolf.Scores.wipe_leaderboard()
 	SilentWolf.configure({
 		  "api_key": "Lxi8p8nrJD84i08qavmCQ4tXEmGwgM4W8WQ9QcAw",
@@ -14,6 +15,11 @@ func _ready():
 	SilentWolf.configure_scores({
 		  "open_scene_on_close": "res://Scenes/Main.tscn"
 		})
+
+func _unhandled_input(event):
+	if event is InputEventScreenTouch:
+		lab.set_text("using touch screen")
+		Global.touch = true
 
 func _on_TextureButton_pressed():
 	playSound()

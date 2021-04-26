@@ -11,34 +11,38 @@ onready var focuslabel = get_node("focus")
 onready var gametimelabel = get_node("gametime")
 onready var face = get_node("Head/Head")
 onready var bg = get_node("BG")
-
+onready var nullicon = load("res://Assests/nullicon.png")
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	Input.set_custom_mouse_cursor(nullicon)
 	Global.score = 0
 	randomize()
 	playSound()
 
 func _physics_process(delta):
-#	if Input.is_action_just_pressed("ui_cancel"):
-#		get_tree().change_scene("res://scenes/Menu.tscn")
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene("res://scenes/Menu.tscn")
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		Input.set_custom_mouse_cursor(null)
 	focus += 3*delta
 	focuslabel.set_text(str(Global.score))
 	gametimelabel.set_text(str(int(gametime.time_left)))
 	if(int(gametime.time_left) == 0):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		Input.set_custom_mouse_cursor(null)
 		timer.stop()
 		gametime.stop()
 		get_tree().change_scene("res://Scenes/End.tscn")
 	if(focus > 90):
-		timer.set_wait_time(0.2)
+		timer.set_wait_time(0.22)
 		bg.set_frame(4)
 		speed = 475
 	if(focus <90 and focus > 80):
-		timer.set_wait_time(0.22)
+		timer.set_wait_time(0.25)
 		bg.set_frame(3) 
 		speed = 450
 	if(focus < 80 and focus > 70):
-		timer.set_wait_time(0.25)
+		timer.set_wait_time(0.28)
 		bg.set_frame(2) 
 		speed = 425
 	if(focus < 70 and focus > 60):
@@ -114,12 +118,12 @@ func spawnThought():
 		pos.y = rand_range(-64,200)
 		pass
 	if(side == 2):
-		pos.x = rand_range(-64,768)
+		pos.x = rand_range(-64,200)
 		pos.y = -64
 		pass
 	if(side == 3):
 		pos.x = 768
-		pos.y = rand_range(-64,200)
+		pos.y = rand_range(-64,150)
 	new_thought.set_position(pos)
 	get_node("Control").add_child(new_thought)
 

@@ -6,9 +6,8 @@ var cursor_line = 0
 var cursor_column = 0
 var sound = null
 onready var your_score = get_node("NinePatchRect/Label")
-
+onready var buttontext = get_node("TextureButton2/Label")
 func _ready():
-	connect("focus_entered", self, "js_text_entry")
 	randomize()
 	playSound()
 	your_score.set_text("You Deflected " + str(Global.score) + " Distracting Thoughts!")
@@ -36,9 +35,16 @@ func js_text_entry():
 	textedit.set_text(current_text)
 
 func _on_LineEdit_focus_entered():
-	print(OS.get_name())
-	if(OS.get_name() != "Windows"):
+	if(Global.touch == true):
 		js_text_entry()
 		textedit.hide()
 		textedit.show()
-	print(textedit.text)
+
+
+func _on_LineEdit_text_changed(new_text):
+	if(textedit.text == ""):
+		buttontext.set_text("High Scores")
+		Global.submit = false
+	else:
+		buttontext.set_text("Submit Score")
+		Global.submit = true

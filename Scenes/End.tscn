@@ -103,7 +103,7 @@ margin_right = 440.0
 margin_bottom = 278.0
 custom_fonts/font = SubResource( 8 )
 align = 1
-max_length = 15
+max_length = 10
 placeholder_text = " Enter Name Here"
 placeholder_alpha = 0.471
 __meta__ = {
@@ -124,8 +124,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="TextureButton2"]
-margin_left = 13.0
-margin_right = 163.0
+margin_left = 4.0
+margin_right = 172.0
 margin_bottom = 31.0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.647059, 0.615686, 0.933333, 1 )
@@ -194,4 +194,5 @@ stream = ExtResource( 11 )
 volume_db = -30.793
 
 [connection signal="focus_entered" from="LineEdit" to="." method="_on_LineEdit_focus_entered"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
