@@ -1,6 +1,6 @@
 extends Node2D
 
-
+var sound = null
 func _ready():
 #	SilentWolf.Scores.wipe_leaderboard()
 	SilentWolf.configure({
@@ -14,9 +14,17 @@ func _ready():
 		})
 
 func _on_TextureButton_pressed():
+	playSound()
 	get_tree().change_scene("res://Scenes/Main.tscn")
 	pass # Replace with function body.
 
 func _on_TextureButton2_pressed():
+	playSound()
+	yield(sound,"finished")
 	get_tree().change_scene("res://Scenes/HighScores.tscn")
 	pass # Replace with function body.
+
+func playSound():
+	var val = randi()%11+1
+	sound = get_node("sounds/"+str(val))
+	sound.play()

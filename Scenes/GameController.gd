@@ -16,7 +16,7 @@ func _ready():
 	randomize()
 
 func _physics_process(delta):
-	focus += 2*delta
+	focus += 3*delta
 	focuslabel.set_text(str(Global.score))
 	gametimelabel.set_text(str(int(gametime.time_left)))
 	if(int(gametime.time_left) == 0):

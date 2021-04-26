@@ -1,11 +1,22 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Assests/Cinzel Family/Cinzel/Cinzel-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/paddle.gd" type="Script" id=2]
+[ext_resource path="res://Assests/sounds/collission sfx 8.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assests/bg.png" type="Texture" id=4]
 [ext_resource path="res://Assests/mediationboi.png" type="Texture" id=5]
 [ext_resource path="res://Assests/paddle.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/GameController.gd" type="Script" id=7]
+[ext_resource path="res://Assests/sounds/collission sfx 6.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assests/sounds/collission sfx 11.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assests/sounds/collission sfx 2.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assests/sounds/collission sfx 7.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assests/sounds/collission sfx 3.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assests/sounds/collission sfx 9.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assests/sounds/collission sfx 5.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assests/sounds/collission sfx 4.wav" type="AudioStream" id=15]
+[ext_resource path="res://Assests/sounds/collission sfx 10.wav" type="AudioStream" id=16]
+[ext_resource path="res://Assests/sounds/collission sfx 1.wav" type="AudioStream" id=17]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
@@ -100,7 +111,7 @@ curve = SubResource( 7 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 1248.59, 571.203 )
-rotation = 0.860958
+rotation = 0.861011
 offset = 1388.44
 loop = false
 
@@ -158,6 +169,50 @@ __meta__ = {
 wait_time = 60.0
 autostart = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="sounds" type="Node2D" parent="."]
+
+[node name="1" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource( 17 )
+volume_db = -15.687
+
+[node name="2" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource( 10 )
+volume_db = -15.687
+
+[node name="3" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource( 12 )
+volume_db = -15.687
+
+[node name="4" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource( 15 )
+volume_db = -15.687
+
+[node name="5" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource( 14 )
+volume_db = -15.687
+
+[node name="6" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource( 8 )
+volume_db = -15.687
+
+[node name="7" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource( 11 )
+volume_db = -15.687
+
+[node name="8" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource( 3 )
+volume_db = -15.687
+
+[node name="9" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource( 13 )
+volume_db = -15.687
+
+[node name="10" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource( 16 )
+volume_db = -15.687
+
+[node name="11" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource( 9 )
+volume_db = -15.687
 
 [connection signal="timeout" from="Thought_Timer" to="." method="_on_Timer_timeout"]

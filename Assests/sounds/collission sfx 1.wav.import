@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/collission sfx 1.wav-cf49bbcc087649918dee2895d9d7bb7f.sample"
+
+[deps]
+
+source_file="res://Assests/sounds/collission sfx 1.wav"
+dest_files=[ "res://.import/collission sfx 1.wav-cf49bbcc087649918dee2895d9d7bb7f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
