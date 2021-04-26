@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Assests/Cinzel Family/Cinzel/Cinzel-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/paddle.gd" type="Script" id=2]
@@ -49,7 +49,7 @@ animations = [ {
 
 [sub_resource type="Curve2D" id=7]
 _data = {
-"points": PoolVector2Array( -169.955, 196.968, 169.955, -196.968, 65.7154, 571.203, -154.514, 51.6049, 154.514, -51.6049, 392.026, 310.436, -154.451, -51.1158, 154.451, 51.1158, 881.493, 310.436, -173.644, -202.167, 173.644, 202.167, 1248.59, 571.203 )
+"points": PoolVector2Array( -30.0278, 130.701, 30.0278, -130.701, 33.778, 371, -36.3764, 22.1034, 36.3764, -22.1034, 167.024, 202.779, -59.6685, -26.0179, 59.6685, 26.0179, 346.928, 203.063, -21.8978, -93.8163, 21.8978, 93.8163, 477.664, 371.817 )
 }
 
 [sub_resource type="CapsuleShape2D" id=8]
@@ -76,16 +76,29 @@ region = Rect2( 600, 0, 200, 200 )
 atlas = ExtResource( 5 )
 region = Rect2( 800, 0, 200, 200 )
 
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 800, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 5 )
+region = Rect2( 600, 0, 200, 200 )
+
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": false,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "upset",
+"speed": 10.0
 } ]
 
 [sub_resource type="CircleShape2D" id=15]
-radius = 92.0
+radius = 91.0318
 
 [sub_resource type="DynamicFont" id=16]
 size = 46
@@ -106,23 +119,24 @@ __meta__ = {
 }
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2( 102.222, 16 )
-scale = Vector2( 0.392264, 0.644255 )
+position = Vector2( 108.261, 17.6389 )
+scale = Vector2( 0.987356, 0.991064 )
 curve = SubResource( 7 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 1248.59, 571.203 )
-rotation = 0.861011
-offset = 1388.44
+position = Vector2( 109.642, 236.439 )
+rotation = -0.640451
+offset = 157.86
 loop = false
 
 [node name="paddle" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
 rotation = -0.00222578
-scale = Vector2( 1, 1.01355 )
+scale = Vector2( 0.5, 0.6 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/paddle"]
 position = Vector2( 0, 3.09944e-06 )
+rotation = -0.00164995
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
 
@@ -131,6 +145,7 @@ rotation = 1.5708
 shape = SubResource( 8 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
 margin_left = 328.0
 margin_right = 400.0
 margin_bottom = 56.0
@@ -153,10 +168,9 @@ autostart = true
 position = Vector2( 360, 208 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 14 )
-frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
-position = Vector2( 360, 424 )
+position = Vector2( 360, 423 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 15 )
 

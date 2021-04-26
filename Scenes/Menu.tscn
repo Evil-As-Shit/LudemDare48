@@ -64,10 +64,10 @@ frames = SubResource( 6 )
 centered = false
 
 [node name="Title" type="NinePatchRect" parent="."]
-margin_left = 232.0
-margin_top = 82.0
-margin_right = 544.0
-margin_bottom = 130.0
+margin_left = 204.0
+margin_top = 72.0
+margin_right = 516.0
+margin_bottom = 120.0
 texture = ExtResource( 2 )
 patch_margin_left = 5
 patch_margin_top = 5
@@ -79,9 +79,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Title"]
 margin_left = 8.0
-margin_top = 8.0
+margin_top = 7.0
 margin_right = 304.0
-margin_bottom = 44.0
+margin_bottom = 43.0
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.647059, 0.615686, 0.933333, 1 )
 text = "DEEP MEDITATION"
@@ -92,10 +92,10 @@ __meta__ = {
 }
 
 [node name="ButtonBox" type="NinePatchRect" parent="."]
-margin_left = 288.0
-margin_top = 240.0
-margin_right = 480.0
-margin_bottom = 344.0
+margin_left = 264.0
+margin_top = 214.0
+margin_right = 456.0
+margin_bottom = 318.0
 texture = ExtResource( 2 )
 patch_margin_left = 5
 patch_margin_top = 5
@@ -131,9 +131,9 @@ __meta__ = {
 
 [node name="TextureButton2" type="TextureButton" parent="ButtonBox"]
 margin_left = 16.0
-margin_top = 49.0
-margin_right = 175.0
-margin_bottom = 80.0
+margin_top = 50.0
+margin_right = 176.0
+margin_bottom = 81.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 8 )
@@ -143,9 +143,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="ButtonBox/TextureButton2"]
-margin_left = 4.0
+margin_left = 5.0
 margin_top = -1.0
-margin_right = 154.0
+margin_right = 155.0
 margin_bottom = 31.0
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.647059, 0.615686, 0.933333, 1 )

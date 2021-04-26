@@ -70,10 +70,10 @@ frame = 4
 centered = false
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-margin_left = 216.0
-margin_top = 32.0
-margin_right = 536.0
-margin_bottom = 384.0
+margin_left = 200.0
+margin_top = 27.0
+margin_right = 520.0
+margin_bottom = 379.0
 rect_pivot_offset = Vector2( 120, 232 )
 texture = ExtResource( 2 )
 patch_margin_left = 5
@@ -126,9 +126,14 @@ __meta__ = {
 [node name="names" type="Label" parent="NinePatchRect"]
 margin_left = 40.0
 margin_top = 76.0
-margin_right = 169.0
+margin_right = 200.0
 margin_bottom = 296.0
 custom_fonts/font = ExtResource( 9 )
+text = "
+
+
+
+                       Loading..."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -147,10 +152,10 @@ __meta__ = {
 }
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 328.0
-margin_top = 336.0
-margin_right = 436.0
-margin_bottom = 368.0
+margin_left = 306.0
+margin_top = 333.0
+margin_right = 414.0
+margin_bottom = 365.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
@@ -159,8 +164,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="TextureButton"]
-margin_left = 24.0
-margin_right = 92.0
+margin_left = 20.0
+margin_right = 88.0
 margin_bottom = 28.0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.647059, 0.615686, 0.933333, 1 )
