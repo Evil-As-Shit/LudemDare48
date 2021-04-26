@@ -24,11 +24,6 @@ func _physics_process(delta):
 		timer.stop()
 		gametime.stop()
 		get_tree().change_scene("res://Scenes/End.tscn")
-		pass
-#	if(reset == false):
-#		reset == true
-#	elif(reset == true):
-#		pass
 	if(focus > 90):
 		timer.set_wait_time(0.15)
 		bg.set_frame(4) 
@@ -82,7 +77,6 @@ func spawnThought():
 
 func _on_Timer_timeout():
 	spawnThought()
-#	reset = false
 
 func playSound():
 	var val = randi()%11+1

@@ -16,13 +16,16 @@ func _ready():
 	print(names)
 	print(scores)
 	var text = ""
+	var i = 0
 	for name in names:
+		i += 1
 		text = text + str(name) + "\n" 
 	label_names.set_text(text)
 	text = ""
 	for score in scores:
 		text = text + str(score) + "\n" 
 	label_scores.set_text(text)
+
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://Scenes/Menu.tscn")
 	pass # Replace with function body.

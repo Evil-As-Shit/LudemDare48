@@ -94,19 +94,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="LineEdit" type="TextEdit" parent="."]
 margin_left = 296.0
 margin_top = 248.0
 margin_right = 464.0
 margin_bottom = 282.0
 custom_fonts/font = SubResource( 8 )
-align = 1
-max_length = 15
-placeholder_text = "Enter Name Here "
-placeholder_alpha = 0.383
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureButton2" type="TextureButton" parent="."]
 margin_left = 300.0
@@ -191,4 +184,5 @@ volume_db = -30.793
 stream = ExtResource( 11 )
 volume_db = -30.793
 
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
