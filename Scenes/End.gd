@@ -16,12 +16,6 @@ func _on_TextureButton2_pressed():
 	get_tree().get_root().set_disable_input(true)
 	Global.player_name = textedit.text
 	SilentWolf.Scores.persist_score(Global.player_name, Global.score)
-	var t = Timer.new()
-	t.set_wait_time(1)
-	t.set_one_shot(true)
-	self.add_child(t)
-	t.start()
-	yield(t, "timeout")
 	get_tree().get_root().set_disable_input(false)
 	get_tree().change_scene("res://Scenes/HighScores.tscn")
 

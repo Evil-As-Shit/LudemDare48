@@ -31,6 +31,14 @@ func _ready():
 			text = text + str(score) + "\n" 
 		label_scores.set_text(text)
 	if(Global.submit == true):
+		var t = Timer.new()
+		t.set_wait_time(1)
+		t.set_one_shot(true)
+		self.add_child(t)
+		t.start()
+		get_tree().get_root().set_disable_input(true)
+		yield(t, "timeout")
+		get_tree().get_root().set_disable_input(false)
 		print("scores around")
 		yield(SilentWolf.Scores.get_scores_around(Global.score, 5), "sw_scores_around_received")
 		for k in SilentWolf.Scores.scores_above:
