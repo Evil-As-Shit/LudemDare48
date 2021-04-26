@@ -80,7 +80,7 @@ region = Rect2( 800, 0, 200, 200 )
 atlas = ExtResource( 5 )
 region = Rect2( 800, 0, 200, 200 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 5 )
 region = Rect2( 1000, 0, 200, 200 )
 
@@ -91,7 +91,7 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 14 ), SubResource( 19 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ) ],
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ) ],
 "loop": true,
 "name": "upset",
 "speed": 10.0
@@ -197,7 +197,7 @@ __meta__ = {
 }
 
 [node name="Game_Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 60.0
 autostart = true
 
 [node name="sounds" type="Node2D" parent="."]

@@ -1,7 +1,10 @@
 extends Node2D
 onready var lab = get_node("Label")
+onready var icon = load("res://Assests/mediationicon.png")
 var sound = null
+
 func _ready():
+
 	randomize()
 	playSound()
 	print(Global.submit)

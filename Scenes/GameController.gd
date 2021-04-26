@@ -120,15 +120,15 @@ func spawnThought():
 	var pos = Vector2()
 	if(side == 1):
 		pos.x = -64
-		pos.y = rand_range(-64,200)
+		pos.y = rand_range(-64,150)
 		pass
 	if(side == 3):
-		pos.x = rand_range(-64,768)
+		pos.x = rand_range(-0,720)
 		pos.y = -64
 		pass
 	if(side == 2):
 		pos.x = 768
-		pos.y = rand_range(-64,200)
+		pos.y = rand_range(-64,150)
 	new_thought.set_position(pos)
 	get_node("Control").add_child(new_thought)
 
