@@ -29,34 +29,34 @@ func _physics_process(delta):
 #	elif(reset == true):
 #		pass
 	if(focus > 90):
-		timer.set_wait_time(0.2)
+		timer.set_wait_time(0.15)
 		bg.set_frame(4) 
 	if(focus <90 and focus > 80):
-		timer.set_wait_time(0.25)
+		timer.set_wait_time(0.2)
 		bg.set_frame(3) 
 	if(focus < 80 and focus > 70):
-		timer.set_wait_time(0.3)
+		timer.set_wait_time(0.25)
 		bg.set_frame(2) 
 	if(focus < 70 and focus > 60):
-		timer.set_wait_time(0.35)
+		timer.set_wait_time(0.31)
 		bg.set_frame(1) 
 	if(focus < 60 and focus > 50):
-		timer.set_wait_time(0.4)
+		timer.set_wait_time(0.34)
 		bg.set_frame(0)
 	if(focus < 50 and focus > 40):
-		timer.set_wait_time(0.5)
+		timer.set_wait_time(0.37)
 		face.set_frame(4)
 	if(focus < 40 and focus > 30):
-		timer.set_wait_time(0.6)
+		timer.set_wait_time(0.41)
 		face.set_frame(3)
 	if(focus < 30 and focus > 20):
-		timer.set_wait_time(0.8)
+		timer.set_wait_time(0.44)
 		face.set_frame(2)
 	if(focus < 20 and focus > 10):
-		timer.set_wait_time(0.9)
+		timer.set_wait_time(0.47)
 		face.set_frame(1)
 	if(focus <10):
-		timer.set_wait_time(1)
+		timer.set_wait_time(0.5)
 		face.set_frame(0)
 
 func spawnThought():

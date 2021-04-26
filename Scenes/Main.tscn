@@ -37,7 +37,7 @@ animations = [ {
 
 [sub_resource type="Curve2D" id=7]
 _data = {
-"points": PoolVector2Array( -140.245, 198.924, 140.245, -198.924, 65.7154, 571.203, -163.347, 50.6271, 163.347, -50.6271, 392.026, 310.436, -154.451, -51.1158, 154.451, 51.1158, 881.493, 310.436, -173.644, -202.167, 173.644, 202.167, 1248.59, 571.203 )
+"points": PoolVector2Array( -169.955, 196.968, 169.955, -196.968, 65.7154, 571.203, -154.514, 51.6049, 154.514, -51.6049, 392.026, 310.436, -154.451, -51.1158, 154.451, 51.1158, 881.493, 310.436, -173.644, -202.167, 173.644, 202.167, 1248.59, 571.203 )
 }
 
 [sub_resource type="CapsuleShape2D" id=8]
@@ -99,9 +99,9 @@ scale = Vector2( 0.392264, 0.644255 )
 curve = SubResource( 7 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 656.435, 272.436 )
-rotation = 0.0221046
-offset = 700.11
+position = Vector2( 1248.59, 571.203 )
+rotation = 0.860958
+offset = 1388.44
 loop = false
 
 [node name="paddle" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
@@ -155,7 +155,9 @@ __meta__ = {
 }
 
 [node name="Game_Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 60.0
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="timeout" from="Thought_Timer" to="." method="_on_Timer_timeout"]
