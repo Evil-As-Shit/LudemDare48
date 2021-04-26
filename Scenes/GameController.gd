@@ -24,7 +24,7 @@ func _physics_process(delta):
 		get_tree().change_scene("res://scenes/Menu.tscn")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		Input.set_custom_mouse_cursor(null)
-	focus += 3*delta
+	focus += 2.5*delta
 	focuslabel.set_text(str(Global.score))
 	gametimelabel.set_text(str(int(gametime.time_left)))
 	if(int(gametime.time_left) == 0):
@@ -34,7 +34,7 @@ func _physics_process(delta):
 		gametime.stop()
 		get_tree().change_scene("res://Scenes/End.tscn")
 	if(focus > 90):
-		timer.set_wait_time(0.22)
+		timer.set_wait_time(0.21)
 		bg.set_frame(4)
 		speed = 475
 	if(focus <90 and focus > 80):
@@ -111,19 +111,24 @@ func spawnThought():
 		extents = Vector2(18,25)
 		new_thought.get_node("CollisionShape2D").rotation_degrees = -27
 	new_thought.get_node("CollisionShape2D").get_shape().set_extents(extents)
-	var side = randi()%3+1
+	var weight = randi()%10+1
+	var side = 0
+	if(weight > 5):
+		side = 3
+	else:
+		side = randi()%2+1
 	var pos = Vector2()
 	if(side == 1):
 		pos.x = -64
 		pos.y = rand_range(-64,200)
 		pass
-	if(side == 2):
-		pos.x = rand_range(-64,200)
+	if(side == 3):
+		pos.x = rand_range(-64,768)
 		pos.y = -64
 		pass
-	if(side == 3):
+	if(side == 2):
 		pos.x = 768
-		pos.y = rand_range(-64,150)
+		pos.y = rand_range(-64,200)
 	new_thought.set_position(pos)
 	get_node("Control").add_child(new_thought)
 
