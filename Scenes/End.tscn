@@ -60,7 +60,7 @@ centered = false
 margin_left = 216.0
 margin_top = 128.0
 margin_right = 536.0
-margin_bottom = 320.0
+margin_bottom = 360.0
 texture = ExtResource( 2 )
 patch_margin_left = 5
 patch_margin_top = 5
@@ -84,43 +84,44 @@ __meta__ = {
 }
 
 [node name="LineEdit" type="LineEdit" parent="."]
-visible = false
 margin_left = 296.0
-margin_top = 224.0
+margin_top = 248.0
 margin_right = 464.0
-margin_bottom = 258.0
+margin_bottom = 282.0
 custom_fonts/font = SubResource( 8 )
 align = 1
-max_length = 20
+max_length = 15
 placeholder_text = "Enter Name Here "
 placeholder_alpha = 0.383
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 328.0
-margin_top = 272.0
-margin_right = 436.0
-margin_bottom = 304.0
+[node name="TextureButton2" type="TextureButton" parent="."]
+margin_left = 300.0
+margin_top = 288.0
+margin_right = 459.0
+margin_bottom = 319.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 6 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TextureButton"]
-margin_left = 20.0
-margin_right = 88.0
-margin_bottom = 28.0
+[node name="Label" type="Label" parent="TextureButton2"]
+margin_left = 4.0
+margin_top = -1.0
+margin_right = 154.0
+margin_bottom = 31.0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.647059, 0.615686, 0.933333, 1 )
-text = "Menu"
+text = "High Scores"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
