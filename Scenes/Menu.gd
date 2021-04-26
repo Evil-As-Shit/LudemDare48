@@ -2,6 +2,8 @@ extends Node2D
 
 var sound = null
 func _ready():
+	randomize()
+	playSound()
 #	SilentWolf.Scores.wipe_leaderboard()
 	SilentWolf.configure({
 		  "api_key": "Lxi8p8nrJD84i08qavmCQ4tXEmGwgM4W8WQ9QcAw",
@@ -19,8 +21,6 @@ func _on_TextureButton_pressed():
 	pass # Replace with function body.
 
 func _on_TextureButton2_pressed():
-	playSound()
-	yield(sound,"finished")
 	get_tree().change_scene("res://Scenes/HighScores.tscn")
 	pass # Replace with function body.
 

@@ -9,6 +9,3 @@ func _physics_process(delta):
 		face.set_frame(3)
 		pass
 	pass
-
-
-

@@ -158,38 +158,49 @@ __meta__ = {
 
 [node name="sounds" type="Node2D" parent="."]
 
-[node name="1" type="AudioStreamPlayer2D" parent="sounds"]
+[node name="1" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 19 )
+volume_db = -30.793
 
-[node name="2" type="AudioStreamPlayer2D" parent="sounds"]
+[node name="2" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 12 )
+volume_db = -30.793
 
-[node name="3" type="AudioStreamPlayer2D" parent="sounds"]
+[node name="3" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 14 )
+volume_db = -30.793
 
-[node name="4" type="AudioStreamPlayer2D" parent="sounds"]
+[node name="4" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 17 )
+volume_db = -30.793
 
-[node name="5" type="AudioStreamPlayer2D" parent="sounds"]
+[node name="5" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 16 )
+volume_db = -30.793
 
-[node name="6" type="AudioStreamPlayer2D" parent="sounds"]
+[node name="6" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 10 )
+volume_db = -30.793
 
-[node name="7" type="AudioStreamPlayer2D" parent="sounds"]
+[node name="7" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 13 )
+volume_db = -30.793
 
-[node name="8" type="AudioStreamPlayer2D" parent="sounds"]
+[node name="8" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 9 )
+volume_db = -30.793
 
-[node name="9" type="AudioStreamPlayer2D" parent="sounds"]
+[node name="9" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 15 )
+volume_db = -30.793
 
-[node name="10" type="AudioStreamPlayer2D" parent="sounds"]
+[node name="10" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 18 )
+volume_db = -30.793
 
-[node name="11" type="AudioStreamPlayer2D" parent="sounds"]
+[node name="11" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 11 )
+volume_db = -30.793
 
 [connection signal="pressed" from="ButtonBox/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="ButtonBox/TextureButton2" to="." method="_on_TextureButton2_pressed"]

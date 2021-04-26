@@ -1,5 +1,5 @@
 extends Node
-
+var sound = null
 var focus = 0
 const thought = preload("res://Scenes/Thoughts.tscn")
 var orgin = Vector2(360,408)
@@ -14,6 +14,7 @@ onready var bg = get_node("BG")
 func _ready():
 	Global.score = 0
 	randomize()
+	playSound()
 
 func _physics_process(delta):
 	focus += 3*delta
@@ -81,5 +82,9 @@ func spawnThought():
 
 func _on_Timer_timeout():
 	spawnThought()
-	print(timer.wait_time)
 #	reset = false
+
+func playSound():
+	var val = randi()%11+1
+	sound = get_node("sounds/"+str(val))
+	sound.play()
