@@ -12,7 +12,6 @@ config_version=4
 
 config/name="Deep Meditation"
 run/main_scene="res://Scenes/Menu.tscn"
-config/icon="res://icon.png"
 
 [autoload]
 
