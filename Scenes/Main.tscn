@@ -197,7 +197,7 @@ __meta__ = {
 }
 
 [node name="Game_Timer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 60.0
 autostart = true
 
 [node name="sounds" type="Node2D" parent="."]
