@@ -18,6 +18,16 @@ func _ready():
 	t.start()
 	yield(t, "timeout")
 	get_node("LineEdit").grab_focus()
+	
+
+func _physics_process(delta):
+	if(textedit.text == ""):
+		buttontext.set_text("High Scores")
+		Global.submit = false
+	else:
+		buttontext.set_text("Submit Score")
+		Global.submit = true
+
 func _on_TextureButton2_pressed():
 	get_tree().get_root().set_disable_input(true)
 	Global.player_name = textedit.text
@@ -33,12 +43,12 @@ func playSound():
 func js_text_entry():
 	current_text = JavaScript.eval("prompt('%s', '%s');" % ["Enter Your Name:", current_text], true)
 	textedit.set_text(current_text)
-	if(textedit.text == ""):
-		buttontext.set_text("High Scores")
-		Global.submit = false
-	else:
-		buttontext.set_text("Submit Score")
-		Global.submit = true
+#	if(textedit.text == ""):
+#		buttontext.set_text("High Scores")
+#		Global.submit = false
+#	else:
+#		buttontext.set_text("Submit Score")
+#		Global.submit = true
 
 func _on_LineEdit_focus_entered():
 	print(Global.touch)
@@ -48,11 +58,11 @@ func _on_LineEdit_focus_entered():
 		textedit.show()
 
 
-func _on_LineEdit_text_changed(new_text):
-	print("line edited")
-	if(textedit.text == ""):
-		buttontext.set_text("High Scores")
-		Global.submit = false
-	else:
-		buttontext.set_text("Submit Score")
-		Global.submit = true
+#func _on_LineEdit_text_changed(new_text):
+#	print("line edited")
+#	if(textedit.text == ""):
+#		buttontext.set_text("High Scores")
+#		Global.submit = false
+#	else:
+#		buttontext.set_text("Submit Score")
+#		Global.submit = true
